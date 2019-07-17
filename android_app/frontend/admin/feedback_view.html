@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/datetimepicker/src/DateTimePicker.css" />
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+</head>
+<body class="bodyClass">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="dashboard.html"> <img src="../assets/logo/web4.png" id="logo" alt="Logo"></a>
+            <ul class="nav">
+                <li>
+                    <a href="forum_list.html">Forums</a>
+                </li>
+                <li>
+                    <a href="feedback_list.html">Feedback</a>
+                </li>
+                <li>
+                    <a href="user_list.html">Add User</a>
+                </li>
+                <li>
+                    <a href="appointment_list.html">Appointment</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li id="logout">
+                            <a href="javascript: void(0)">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container top">
+
+
+    <div class="page-header">
+        <h2>
+            Detail of Feedback
+        </h2>
+    </div>
+
+    <fieldset>
+        <div class="control-group">
+
+
+            <p><b>Name: </b> <span id="name"></span></p>
+        </div>
+
+        <div class="control-group">
+            <p><b>Phone: </b><span id="phone"></span></p>
+        </div>
+        <div class="control-group">
+            <p><b>Email:</b><span id="email"></span> </p>
+        </div>
+        <div class="control-group">
+
+            <p><b>Message:</b> <span id="message"></span></p><br><br>
+
+
+        </div>
+
+
+    </fieldset>
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../assets/ckeditor/ckeditor.js"></script>
+<script>
+
+</script>
+
+<script type="text/javascript" src="../assets/datetimepicker/src/DateTimePicker.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#dtBox").DateTimePicker();
+    });
+</script>
+<script type="text/javascript" src="../assets/js/storage.js"></script>
+<script type="text/javascript" src="../assets/js/token.js"></script>
+<script type="text/javascript" src="../assets/js/admin_form.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var id = "";
+        var searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('id')) {
+            id = searchParams.get('id');
+        }
+        var data = { //Fetch form data
+            'token'         :localStorage.getItem("token"),
+            'id'            :localStorage.getItem("_id"),
+            '_id'          : id
+        };
+        $.ajax({
+            type: 'POST',
+            url: 'http://127.0.0.1:3000/api/admin/view_feedback',
+            data: data,
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                $('#_id').html(response._id);
+                $('#name').html(response.name);
+                $('#phone').html(response.phone);
+                $('#email').html(response.email);
+                $('#message').html(response.message);
+
+            },
+            error: function () {
+            }
+        })
+    });
+</script>
+
+</body>
+</html>

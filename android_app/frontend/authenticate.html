@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Log in / Sign up</title>
+
+
+    <link rel="stylesheet" href="assets/css/login_style.css">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+</head>
+
+<body>
+
+<h2 class="title"><a href="./index.html"> <img src="assets/logo/web3.png" id="logo" alt="Logo"></a></h2>
+
+<div class="login-container">
+    <div class="box"></div>
+    <div class="container-forms">
+        <div class="container-info">
+            <div class="info-item">
+                <div class="table">
+                    <div class="table-cell">
+                        <p>
+                            Have an account?
+                        </p>
+                        <div class="btn">
+                            Log in
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="table">
+                    <div class="table-cell">
+                        <p>
+                            Don't have an account?
+                        </p>
+                        <div class="btn">
+                            Sign up
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-form">
+            <div class="form-item log-in">
+                <div class="table">
+                    <div class="table-cell">
+                        <div class="alert-info" id="checkLogin"></div>
+                        <form id="form" method="post">
+                            <label for="email1" class="lbl_status">Email</label>
+                            <input type="text" id="email1" name="email" placeholder="Email"  required="required" class="form-control"><br/>
+                            <label for="password1" class="lbl_status">Password</label>
+                            <input type="password" id="password1" name="password" placeholder="Password"  required="required"
+                                   class="form-control"><br/>
+                            <!--<input type="submit" value="Login" class="btn">-->
+                            <div class="btn submit-form">
+                                Log in
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="form-item sign-up">
+                <div class="table">
+                    <div class="table-cell">
+                        <form id="form1" method="post">
+                            <label for="email" class="lbl_status">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email"  required="required" class="form-control"><br/>
+                            <label for="username" class="lbl_status">Username</label>
+                            <input type="text" name="username" id="username" placeholder="Username"  required="required"
+                                   class="form-control"><br/>
+                            <label for="password" class="lbl_status">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password"  required="required"
+                                   class="form-control"><br/>
+                            <label for="passwordConf" class="lbl_status">Confirm Password</label>
+                            <input type="password" id="passwordConf" name="passwordConf" placeholder="Confirm Password"  required="required"
+                                   class="form-control"><br/>
+                            <!-- <input type="submit" value="Sign up" class="btn ">-->
+                            <div class="btn submit-form">
+                                Sign up
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 id="check"></h2>
+    </div>
+</div>
+<div id="LangTable">
+    <a href="/" id="home"></a>
+    <a href="/backend" id="log-in"></a>
+</div>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+
+<script src="assets/js/login_js.js"></script>
+
+
+</body>
+
+</html>
+

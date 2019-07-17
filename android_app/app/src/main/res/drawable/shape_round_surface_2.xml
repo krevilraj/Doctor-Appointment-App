@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="60dp"
+        android:gravity="bottom|center_horizontal"
+        android:top="-40dp">
+        <shape android:shape="oval">
+
+            <solid android:color="@color/bty_gradient_light" />
+        </shape>
+    </item>
+    <item
+        android:bottom="30dp"
+        android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="90"
+                android:endColor="@color/bty_gradient_dark"
+                android:gradientRadius="3dp"
+                android:startColor="@color/bty_gradient_light"
+                android:type="linear" />
+
+        </shape>
+    </item>
+</layer-list>

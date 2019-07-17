@@ -1,0 +1,32 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/clr_white"
+    android:elevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/nav_back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="?android:attr/actionBarItemBackground"
+            app:srcCompat="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:text="Animal Care Center"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

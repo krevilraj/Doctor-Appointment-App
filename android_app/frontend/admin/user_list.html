@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Care Center</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/datetimepicker/src/DateTimePicker.css"/>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+</head>
+<body class="bodyClass">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="dashboard.html"> <img src="../assets/logo/web4.png" id="logo" alt="Logo"></a>
+            <ul class="nav">
+                <li>
+                    <a href="forum_list.html">Forums</a>
+                </li>
+                <li>
+                    <a href="feedback_list.html">Feedback</a>
+                </li>
+                <li>
+                    <a href="user_list.html">Add User</a>
+                </li>
+                <li>
+                    <a href="appointment_list.html">Appointment</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li id="logout">
+                            <a href="javascript: void(0)">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container top">
+
+
+    <div class="page-header users-header">
+        <h2>
+            List of Users
+            <a href="user_add.html" class="btn btn-success">Add a new</a>
+        </h2>
+    </div>
+    <div class="alert-info" id="check"></div>
+
+    <div class="row">
+        <div class="span12 columns">
+
+            <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th class="header">#</th>
+                    <th class="yellow header headerSortDown">Username</th>
+                    <th class="yellow header headerSortDown">Email</th>
+                    <th class="yellow header headerSortDown">User Status</th>
+                    <th class="red header">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="table_data">
+
+
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="../assets/js/storage.js"></script>
+<script type="text/javascript" src="../assets/js/token.js"></script>
+<script type="text/javascript" src="../assets/js/admin_form.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var data = { //Fetch form data
+            'token'         :localStorage.getItem("token"),
+            'id'            :localStorage.getItem("_id")
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/api/admin/list_user',
+            data: data,
+            dataType: "html",
+            success: function (response) {
+                document.getElementById("table_data").innerHTML = response;
+                $(".btn-danger").on('click',function(){
+                    var delete_btn = $(this);
+                    data._id = $(this).data("id");
+                    $.ajax({
+                        type: 'POST',
+                        url: 'http://localhost:3000/api/admin/delete_user',
+                        data: data,
+                        dataType: "json",
+                        success: function (response) {
+                            $("#check").html(response.Success).addClass("alert");
+                            delete_btn.closest("tr").remove();
+                        },
+                        error: function () {
+                            document.getElementById("check").innerHTML = "No data Available";
+                        }
+                    });
+                })
+            },
+            error: function () {
+                document.getElementById("table_data").innerHTML = "No data Available";
+            }
+        });
+
+
+    });
+</script>
+
+</body>
+</html>

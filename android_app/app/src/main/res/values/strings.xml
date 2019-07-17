@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Animal Care System</string>
+    <string name="title_activity_login">login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="donate_text">Lorem ipsum dolor sit amet, discere accusam conceptam mei ut. Eam duis integre nostrum at. Cu everti accusata consulatu vix. Ea nam ubique graeci hendrerit, eos sale tritani debitis at. Soluta essent iisque ne sea, erat deseruisse quaerendum sit in.  His vide persius scriptorem eu, per periculis voluptatum ei. Sit atqui delicata iudicabit ei. An vim ridens argumentum, nec an erant zril. Eos idque munere alienum te, eum liber lucilius ei.</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

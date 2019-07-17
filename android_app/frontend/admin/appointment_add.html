@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/datetimepicker/src/DateTimePicker.css" />
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/png">
+</head>
+<body class="bodyClass">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="dashboard.html"> <img src="../assets/logo/web4.png" id="logo" alt="Logo"></a>
+            <ul class="nav">
+                <li>
+                    <a href="forum_list.html">Forums</a>
+                </li>
+                <li>
+                    <a href="feedback_list.html">Feedback</a>
+                </li>
+                <li>
+                    <a href="user_list.html">Add User</a>
+                </li>
+                <li>
+                    <a href="appointment_list.html">Appointment</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li id="logout">
+                            <a href="javascript: void(0)">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container top">
+
+
+    <div class="page-header">
+        <h2>Add Appointment</h2>
+    </div>
+    <div class="alert-info" id="check"></div>
+    <form id="admin_appointment" method="post" accept-charset="utf-8" class="form-horizontal">
+        <input type="hidden" name="_id" value="">
+
+        <fieldset style="margin-bottom: 20px">
+            <div class="control-group">
+                <label for="name" class="control-label">Name</label>
+                <div class="controls">
+                    <input type="text" required="required" id="name" name="name" value="" style="width:500px">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="petname" class="control-label">Pet Name</label>
+                <div class="controls">
+                    <input type="text" required="required" id="petname" name="petname" value="" style="width:500px">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="email" class="control-label">Email</label>
+                <div class="controls">
+                    <input type="text" required="required" id="email" name="email" value="" style="width:500px">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="phone" class="control-label">Phone</label>
+                <div class="controls">
+                    <input type="text" id="phone" required="required" name="phone" value="" style="width:500px">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="date" class="control-label">Date</label>
+                <div class="controls">
+                    <input type="text" required="required" id="date" name="date" data-field="date" value=""
+                           style="width:500px">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="time" class="control-label">Time</label>
+                <div class="controls">
+                    <input type="text" required="required" id="time" name="time" data-field="time" value=""
+                           style="width:500px">
+                </div>
+            </div>
+            <div id="dtBox"></div>
+
+            <div class="control-group">
+                <label for="editor2" class="control-label">Message</label>
+                <textarea cols="80" id="editor2" name="message" rows="10" data-sample-short>
+                </textarea>
+
+            </div>
+            <div class="form-actions" style="margin-top: 20px">
+                <button class="btn btn-primary" type="submit">Save changes</button>
+                <button class="btn" type="reset">Cancel</button>
+            </div>
+        </fieldset>
+
+    </form>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../assets/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor2');
+</script>
+
+<script type="text/javascript" src="../assets/datetimepicker/src/DateTimePicker.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#dtBox").DateTimePicker();
+    });
+</script>
+<script type="text/javascript" src="../assets/js/storage.js"></script>
+<script type="text/javascript" src="../assets/js/token.js"></script>
+<script type="text/javascript" src="../assets/js/admin_form.js"></script>
+
+</body>
+</html>
