@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--====== Title ======-->
+    <title>Profile</title>
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+
+    <!--====== Line Icons css ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+</head>
+
+<body>
+
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="spin">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART START ======-->
+
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="./index.html">
+                            <img src="assets/logo/web3.png" class="logo" alt="Logo">
+                        </a>
+                        <!-- Logo -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="bar-icon"></span>
+                        <span class="bar-icon"></span>
+                        <span class="bar-icon"></span>
+                    </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a data-scroll-nav="0" href="./index.html">Home</a>
+                                </li>
+                                <li class="nav-item fornormaluser">
+                                    <a data-scroll-nav="0" href="./index.html#contact">Contact</a>
+                                </li>
+                                <li class="nav-item fornormaluser">
+                                    <a data-scroll-nav="0" href="./donate.html">Donate</a>
+                                </li>
+                                <li class="nav-item fornormaluser">
+                                    <a data-scroll-nav="0" href="./appointment.html">Take a appointment</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a data-scroll-nav="0" href="./forumList.html">Forum</a>
+                                </li>
+                                <li class="nav-item foradmin">
+                                    <a data-scroll-nav="0" href="./admin/dashboard.html">Dashboard</a>
+                                </li>
+                                <li class="nav-item foruser">
+                                    <a data-scroll-nav="0" href="./forumPost.html">Post</a>
+                                </li>
+                                <li class="nav-item dropdown logged">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Setting
+                                </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="./profileDetail.html">Profile</a>
+                                        <a class="dropdown-item" id="logout" href="javascript:void(0);">Logout</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item" id="login">
+                                    <a data-scroll-nav="0" href="./authenticate.html">Login</a>
+                                </li>
+
+
+
+                            </ul>
+                            <!-- navbar nav -->
+                        </div>
+                    </nav>
+                    <!-- navbar -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container -->
+    </header>
+
+
+    <!--====== HEADER PART ENDS ======-->
+
+    <section id="contact" class="contact-area pt-115">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="contact-title text-center">
+                        <h2 class="title">Edit User Profile</h2>
+                    </div>
+                    <!-- contact title -->
+                </div>
+            </div>
+            <!-- row -->
+            <div class="contact-box mt-70">
+                <div class="row">
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="contact-form">
+                            <form id="profileDetail" action="/normaluser/edit_profile" autocomplete="off" method="post" data-toggle="validator">
+                                <div class="row">
+                                    <div class="alert-info" id="check"></div>
+                                    <div class="col-lg-12">
+                                        <div class="single-form form-group">
+                                            <input type="text" id="username" name="username" value="" placeholder="Enter Your Username" data-error="Username is required." required="required">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <!-- single form -->
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single-form form-group">
+                                            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" value="" data-error="Name is required." required="required">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <!-- single form -->
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single-form form-group">
+                                            <input type="email" id="email" name="email" value="" placeholder="Enter Your Email" required="required">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <!-- single form -->
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single-form form-group">
+                                            <input type="text" id="phone" name="phone" value="" placeholder="Enter Your Phone" required="required">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <!-- single form -->
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="single-form form-group">
+                                            <button class="main-btn" type="submit">UPDATE</button>
+                                        </div>
+                                        <!-- single form -->
+                                    </div>
+                                    <div id="dtBox"></div>
+                                </div>
+                                <!-- row -->
+                            </form>
+                        </div>
+                        <!-- row -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- contact box -->
+        </div>
+        <!-- container -->
+    </section>
+
+
+
+    <section id="footer" class="footer-area">
+        <div class="container">
+            <div class="footer-widget pt-75 pb-120">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5 col-sm-7">
+                        <div class="footer-logo mt-40">
+                            <a href="#">
+                                <img src="./assets/logo/web3.png" alt="Logo" class="logo">
+                            </a>
+                            <p class="mt-10">For all your pet’s health needs.</p>
+                            <ul class="footer-social mt-25">
+                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- footer logo -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-5 fornormaluser">
+                        <div class="footer-link mt-50">
+                            <h5 class="f-title">Services</h5>
+                            <ul>
+                                <li class="fornormaluser"><a href="./appointment.html">Appointment</a></li>
+                                <li class="fornormaluser"><a href="./forumList.html">Forum</a></li>
+                                <li class="foruser"><a href="./forumPost.html">Post</a></li>
+
+                            </ul>
+                        </div>
+                        <!-- footer link -->
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-5">
+                        <div class="footer-link mt-50">
+                            <h5 class="f-title">Help</h5>
+                            <ul>
+                                <li><a href="./forumList.html">Forum</a></li>
+                                <li class="fornormaluser"><a href="./index.html#contact">Contact Us</a></li>
+                                <li><a href="./donate.html">Donate</a></li>
+                            </ul>
+                        </div>
+                        <!-- footer link -->
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-7">
+                        <div class="footer-info mt-50">
+                            <h5 class="f-title">Contact Info</h5>
+                            <ul>
+                                <li>
+                                    <div class="single-footer-info mt-20">
+                                        <span>Phone :</span>
+                                        <div class="footer-info-content">
+                                            <p>+88123 4567 890</p>
+                                            <p>+88123 4567 890</p>
+                                        </div>
+                                    </div>
+                                    <!-- single footer info -->
+                                </li>
+                                <li>
+                                    <div class="single-footer-info mt-20">
+                                        <span>Email :</span>
+                                        <div class="footer-info-content">
+                                            <p>officalanimalcarenepal@gmail.com</p>
+                                            <p>supportanimalcarenepal@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <!-- single footer info -->
+                                </li>
+                                <li>
+                                    <div class="single-footer-info mt-20">
+                                        <span>Address :</span>
+                                        <div class="footer-info-content">
+                                            <p>Gajuri-1, Dhading, State-3 Nepal</p>
+                                        </div>
+                                    </div>
+                                    <!-- single footer info -->
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- footer link -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- footer widget -->
+            <div class="footer-copyright pt-15 pb-15">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright text-center">
+                            <p>Crafted by <a href="#" rel="nofollow">Amrit Shrestha</a></p>
+                        </div>
+                        <!-- copyright -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!--  footer copyright -->
+        </div>
+        <!-- container -->
+    </section>
+    <!--====== jquery js ======-->
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+
+    <!--====== Nice Number js ======-->
+    <script src="assets/js/jquery.nice-number.min.js"></script>
+
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/myscript.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script>
+        $(document).ready(function() {
+            var data = 'username=' + localStorage.getItem("username") + '&_id=' + localStorage.getItem("_id") + '&token=' + localStorage.getItem("token");
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:3000/api/profile',
+                data: data,
+                dataType: "json",
+                success: function(response) {
+                    console.log(response);
+                    $('#username').val(response.username);
+                    $('#name').val(response.name);
+                    $('#email').val(response.email);
+                    $('#phone').val(response.phone);
+                },
+                error: function() {}
+            })
+        });
+    </script>

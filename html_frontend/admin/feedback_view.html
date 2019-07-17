@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Area | Edit Page</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/datetimepicker/src/DateTimePicker.css" />
+
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="../assets/logo/web4.png"  id="logo" alt="Logo" width="100%">
+          </div>
+
+        </div>
+      </div>
+    </header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Dashboard</a></li>
+            <li><a href="forum_list.html">Forums</a></li>
+            <li><a href="feedback_list.html">Feedback</a></li>
+            <li><a href="user_list.html">Add User</a></li>
+            <li><a href="appointment_list.html">Appointment</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li id="logout"><a href="javascript: void(0)">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="feedback_list.html">Feedback</a></li>
+          <li class="active">Detail Page</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="index.html" class="list-group-item active main-color-bg">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Operation
+              </a>
+              <a href="feedback_list.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> List </a>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <!-- Website Overview -->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">Detail of Feedback</h3>
+              </div>
+              <div class="panel-body">
+                <div class="alert-info" id="check"></div>
+                <fieldset>
+                    <div class="control-group">
+
+
+                        <p><b>Name: </b> <span id="name"></span></p>
+                    </div>
+
+                    <div class="control-group">
+                        <p><b>Phone: </b><span id="phone"></span></p>
+                    </div>
+                    <div class="control-group">
+                        <p><b>Email:</b><span id="email"></span> </p>
+                    </div>
+                    <div class="control-group">
+
+                        <p><b>Message:</b> <span id="message"></span></p><br><br>
+
+
+                    </div>
+
+
+                </fieldset>
+              </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <p>Copyright Amrit Shrestha, &copy; 2019</p>
+    </footer>
+
+
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/token.js"></script>
+    <script type="text/javascript" src="js/adminscript.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var id = "";
+            var searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('id')) {
+                id = searchParams.get('id');
+            }
+            var data = { //Fetch form data
+                'token'         :localStorage.getItem("token"),
+                'id'            :localStorage.getItem("_id"),
+                '_id'          : id
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:3000/api/admin/view_feedback',
+                data: data,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    $('#_id').html(response._id);
+                    $('#name').html(response.name);
+                    $('#phone').html(response.phone);
+                    $('#email').html(response.email);
+                    $('#message').html(response.message);
+
+                },
+                error: function () {
+                }
+            })
+        });
+    </script>
+  </body>
+</html>
