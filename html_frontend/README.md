@@ -1,10 +1,5 @@
-Amrit Shrestha
+Rajkumar Sharma
 
-Name: Amrit Shrestha
-
-CollegeID: Your college ID
-
-Batch: Jan19D
 
 
 # Frontend code architecture
